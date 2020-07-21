@@ -10,13 +10,12 @@ module.exports = {
 function find() {
   return db('users')
     .select('id', 'username', 'department')
-    .groupBy('department');
 }
 
 function findBy(filter) {
   return db('users')
     .where(filter)
-    .select('id', 'username', 'department');
+    .select('*');
 }
 
 async function add(user) {
